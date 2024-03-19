@@ -1,0 +1,25 @@
+.header-menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+
+
+  &__container {
+
+    // если так оставить то код продублируется везде где есть контейнер
+    // width: min(100% - $gap-x2, $container);
+    // margin-inline: auto;
+    //
+    // вместо єтого делает єкстенд
+    @extend %container;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+}

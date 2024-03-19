@@ -1,0 +1,17 @@
+.header-navbar {
+  &__list {
+
+    // TODO: переделать на гриды и показать разницу
+    display: flex;
+    // отправляем менюшку вправо
+    justify-content: end;
+
+    gap: $gap-x2;
+
+    // list-style: none;
+    // margin: 0;
+    // padding: 0;
+    // вместо этого миксин
+    @include unlist;
+  }
+}
