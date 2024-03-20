@@ -2,10 +2,10 @@
   &__list {
 
     // TODO: переделать на гриды и показать разницу
-    display: flex;
+    display: grid;
     // отправляем менюшку вправо
     justify-content: end;
-
+    grid-template-columns: repeat(3, 1fr);
     gap: $gap-x2;
 
     // list-style: none;
