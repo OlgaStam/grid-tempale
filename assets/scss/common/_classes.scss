@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   min-width: 250px;
   min-height: 60px;
   // чтобы контент кнопок никогда не прижался к бордюру ставим паддинги
@@ -24,6 +24,5 @@
   background-color: rgba($color-white, 0.1);
   border: 2px solid $color-white;
 
-  &__light{
-}
+  &__light {}
 }
