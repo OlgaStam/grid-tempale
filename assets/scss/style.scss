@@ -10,7 +10,7 @@
 @media (min-height: 601px) {
   .skills__container {
     // grid-auto-rows: calc(33.3333vh - #{$local-gap}); пока нельзя вытянуть переменную поэтому вручную
-    grid-auto-rows: calc(33.3333vh - 13, 33333333333333px);
+    grid-auto-rows: calc(33.3333vh - 13.33333333333333px);
   }
 }
 
@@ -18,6 +18,36 @@
 
   // высоту 600 / 3 = 200px вместо 33.3333vh
   .skills__container {
-    grid-auto-rows: calc(200px - 13, 33333333333333px);
+    grid-auto-rows: calc(200px - 13.33333333333333px);
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  .header-content__title {
+    margin: 0 0 53px;
+  }
+}
+
+@media (max-width: 991.8px) and (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .header-content__title {
+    margin: 0 0 43px;
+  }
+}
+
+@media (max-width: 767.8px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .header-content__title {
+    margin: 0 0 33px;
   }
 }
