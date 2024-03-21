@@ -1,20 +1,8 @@
 // @use "mixins";
 // TODO: переделать на юзы и показать разницу
-@import "../../libs/normalize.css/normalize";
+@use "../../libs/normalize.css/normalize";
 
-@import "presets/skin";
-@import "presets/variables";
-
-@import "mixins/extends";
-@import "mixins/mixins-media";
-@import "mixins/mixins";
-
-@import "common/classes";
-@import "common/typography";
-
-@import "components/header/_header";
-@import "components/header/_header-content";
-@import "components/header/_header-logo";
-@import "components/header/_header-menu";
-@import "components/header/_header-navbar";
-@import "components/header/_header-overlay";
+@use "common";
+@use "components/header";
+@use "components/skills";
+@use "components/about";

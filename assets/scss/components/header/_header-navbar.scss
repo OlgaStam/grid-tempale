@@ -1,3 +1,7 @@
+@use "../../presets" as *;
+@use "../../common" as *;
+@use "../../mixins" as *;
+
 .header-navbar {
   &__btn {
     display: none;

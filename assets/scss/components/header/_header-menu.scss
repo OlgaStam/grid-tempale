@@ -1,3 +1,6 @@
+@use "../../mixins" as *;
+@use "../../presets" as *;
+
 .header-menu {
   position: absolute;
   z-index: 2;

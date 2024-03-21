@@ -1,3 +1,6 @@
+@use "../../mixins" as *;
+@use "../../presets" as *;
+
 .header {
   display: grid;
   align-content: center;

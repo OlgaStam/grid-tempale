@@ -1,4 +1,9 @@
-%container{
+@use "../presets" as *;
+// @use "../mixins" as *; нельзя втянуть контейнер сам в себя, поэтому поотдельности
+@use "mixins" as *;
+@use "mixins-media" as *;
+
+%container {
   width: min(100% - $gap-x2, $container);
   margin-inline: auto;
 }

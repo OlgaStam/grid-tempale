@@ -1,3 +1,6 @@
+@use "../../mixins" as *;
+@use "../../presets" as *;
+
 .header-logo {
   // копируем из фотопия, переводим в ремы и ем
   // font-size: 24px;
