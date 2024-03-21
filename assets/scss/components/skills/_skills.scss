@@ -1,2 +1,39 @@
 @use "../../mixins" as *;
 @use "../../presets" as *;
+@use "sass:math";
+
+$local-gap: math.div(40px, 3);
+
+.skills {
+  padding: $gap-sm;
+
+  &__container {
+    margin-bottom: $gap;
+    display: grid;
+    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+    grid-template-columns: repeat(4, 1fr);
+    //  вычисляем относительную высоту для ареас
+    // grid-template-rows: repeat(3, 33.3333vh);
+    // высота блоков данной секции для декстопов =1экран с учетом одинаковых паддинг по вертикали
+    // grid-template-rows: repeat(3, calc(33.3333vh - 40px / 3)); или
+    //grid-template-rows: repeat(3, calc(33.3333vh - #{$local-gap})); - вписали в один экран без учета кнопки
+    // при этом кнопка секции не должна участвовать в расчете высоты
+    //
+    //  grid-template-rows: repeat(3, calc(33.3333vh - #{$local-gap}));
+    // жестко заданная 33.3333vh не даст отзывчивость, поэтому вместо 3 строки по 33.3333vh скажем строке -
+    // неважно сколько строк, принимай указанный размер автоматически (это касается обычной высоты)
+    // grid-auto-rows: calc(33.3333vh - #{$local-gap});
+    // но для динамики перенесем в медиазапросы, они пишутся в конце файла style.scss
+    gap: $gap-sm;
+    //
+    // блоки должны иметь минимальный фиксированный размер в px, менее которого их высота не должна подстраиваться под высоту окна
+    // иначе они будут сжиматься в полосу при изменении высоты экрана
+
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $gap-lg;
+  }
+}

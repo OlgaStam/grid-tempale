@@ -1,4 +1,5 @@
 @use "../presets" as *;
+@use "../mixins" as *;
 
 .btn {
   // свойства копируем из фотопиа,
@@ -18,9 +19,10 @@
   // &__actions{
   //   display: flex;
   // }
-  // переносим опассити в цвет
-  background-color: rgba($color-white, 0.1);
-  border: 2px solid $color-white;
+  // переносим опассити в цвет, переехал в лайте
+  // background-color: rgba($color-white, 0.1);
+  border-width: 2px;
+  border-style: solid;
   // чтобы контент кнопок никогда не прижался к бордюру ставим паддинги
   padding: 0.5em 1em;
 
@@ -30,13 +32,28 @@
   font-size: 1.125rem;
   letter-spacing: 0.1em;
 
-
-
   transition: background-color 0.25s;
 
   &:hover {
     background-color: $color-accent;
   }
 
-  // &__light {}
+  &--light {
+    background-color: rgba($color-white, 0.1);
+    border-color: $color-white;
+    min-width: 250px;
+    min-height: 60px;
+  }
+
+  &--primary {
+    background-color: rgba($color-primary, 0.8);
+    border-color: $color-primary;
+    min-width: 350px;
+    min-height: 60px;
+    // font-size: 1.125rem;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
 }

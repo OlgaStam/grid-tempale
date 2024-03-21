@@ -6,3 +6,18 @@
 @use "components/header";
 @use "components/skills";
 @use "components/about";
+
+@media (min-height: 601px) {
+  .skills__container {
+    // grid-auto-rows: calc(33.3333vh - #{$local-gap}); пока нельзя вытянуть переменную поэтому вручную
+    grid-auto-rows: calc(33.3333vh - 13, 33333333333333px);
+  }
+}
+
+@media (max-height: 600px) {
+
+  // высоту 600 / 3 = 200px вместо 33.3333vh
+  .skills__container {
+    grid-auto-rows: calc(200px - 13, 33333333333333px);
+  }
+}

@@ -1,2 +1,103 @@
 @use "../../mixins" as *;
 @use "../../presets" as *;
+
+.skill-item {
+  position: relative;
+  // очень грубо ставим 33,3333vh
+  // но фиксировать высоту нельзя, иначе не работает грид
+  // исправляем - в контейнере скилам проставим размеры
+
+  &__title {
+    @include abs-position;
+    margin: 0;
+    z-index: 1;
+
+    // добавляем стили из фотопиа и меняем рх на rem/em
+    font-size: 1.25rem;
+    letter-spacing: 0, 1em;
+    //  все остальное наследуется
+    // color: #ffffff;
+    // font-weight: 700;
+    // font-family: "Roboto";
+    // text-align: center;
+  }
+
+  &__link {
+    padding: $gap;
+    // линки проходят сквозь блоки потому что они строчные, меняем на флекс чтобы потом разместить текст
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: green;
+    @include abs-position;
+  }
+
+  &__image {
+    // для придания размеров имеджам указываем миксин вместо всех этих свойств и родителю позишн релатив
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    @include abs-position;
+    background-color: $color-primary;
+    //
+    // картинки фонам должны задаваться в динамике, а это только из html. поэтому их прописываем в index.html
+    // background-image: url("../img/img-html.png");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  // перекрытие
+  &__overlay {
+    @include abs-position;
+    background-color: rgba($color-primary, 0.8);
+  }
+}
+
+//
+// повторение кода легко строится с помощью цикла
+// .skill-item:nth-of-type(1) {
+//   grid-area: a1;
+// }
+
+// .skill-item:nth-of-type(2) {
+//   grid-area: a2;
+// }
+
+// .skill-item:nth-of-type(3) {
+//   grid-area: a3;
+// }
+
+// .skill-item:nth-of-type(4) {
+//   grid-area: a4;
+// }
+
+// .skill-item:nth-of-type(5) {
+//   grid-area: a5;
+// }
+
+// .skill-item:nth-of-type(6) {
+//   grid-area: a6;
+// }
+
+// .skill-item:nth-of-type(7) {
+//   grid-area: a7;
+// }
+
+// .skill-item:nth-of-type(8) {
+//   grid-area: a8;
+// }
+
+// .skill-item:nth-of-type(9) {
+//   grid-area: a9;
+// }
+
+$count: 9;
+
+@for $i from 1 through $count {
+  .skill-item:nth-of-type(#{$i}) {
+    grid-area: a#{$i};
+  }
+}
