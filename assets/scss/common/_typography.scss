@@ -1,32 +1,39 @@
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
 }
 
 html {
   font-family: $font-main;
   font-size: $font-size;
+  overflow: scroll;
 }
 
-body{
+body {
   color: $color-gray;
   background-color: $color-white;
 }
-h1{
-  font-size: 60px;
-letter-spacing: 5px;
-font-weight: 300;
-font-family: $font-header;
+
+h1 {
+  // пиксели переписать на рем
+  font-size: 3.75rem;
+  /* 60px;*/
+  letter-spacing: 0.08em;
+  /*5px;*/
+  // дополнительно задать line-height
+  line-height: 1.2em;
+  font-weight: 300;
+  font-family: $font-header;
 }
 
-h2{
+h2 {
   font-family: $font-header;
 }
 
 // h3{
 // }
-a{
+a {
   text-decoration: none;
   color: $color-white;
 }

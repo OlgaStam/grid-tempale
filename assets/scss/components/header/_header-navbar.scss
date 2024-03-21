@@ -17,14 +17,19 @@
     // margin: 0;
     // padding: 0;
     // вместо этого миксин
-    @include unlist;
+    @include unlist(0 (-$gap-sm) 0 0);
   }
 
-  &__item {}
+  // &__item {}
 
   &__link {
     display: block;
     padding: $gap $gap-sm;
+    // копируем из фотопия, пеерводим в ремы
+    // font-size: 18px;
+    // letter-spacing: 2px;
+    font-size: 1.125rem;
+    letter-spacing: 0.1em;
 
 
     &:hover,

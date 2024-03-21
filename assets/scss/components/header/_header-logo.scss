@@ -1,9 +1,10 @@
 .header-logo {
-  // копируем свойства из фотопиа и меняем на ремы
+  // копируем из фотопия, переводим в ремы и ем
+  // font-size: 24px;
+  // letter-spacing: 6px;
   font-size: 1.5rem;
-  // 24px;
-  letter-spacing: 0.25em;
-  //  6px;
+  letter-spacing: 0.21em;
+
   // line-height: 20px; не нужен, т.к. не двутсрочного текста
   // остальное наследуется
   //  color: #ffffff;
@@ -13,12 +14,12 @@
 
   &__link {
     display: block;
-    padding: 20px;
+    padding: $gap $gap $gap 0;
   }
 
   &__accent {
     display: inline-block;
-    padding: 17px 0 17px 5px;
+    padding: 14px 1px 13px 5px;
     margin-right: 5px;
     border: 3px solid $color-highlight;
   }

@@ -22,11 +22,19 @@
   // чтобы контент кнопок никогда не прижался к бордюру ставим паддинги
   padding: 0.5em 1em;
 
+  // копируем из фотопия, пеерводим в ремы
+  // font-size: 18px;
+  // letter-spacing: 2px;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+
+
+
   transition: background-color 0.25s;
 
   &:hover {
     background-color: $color-accent;
   }
 
-  &__light {}
+  // &__light {}
 }
