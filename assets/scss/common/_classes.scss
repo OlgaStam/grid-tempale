@@ -11,12 +11,10 @@
   align-items: center;
   justify-content: center;
 
-  min-width: 250px;
-  min-height: 60px;
   // чтобы контент кнопок никогда не прижался к бордюру ставим паддинги
   padding: 0.5em 1em;
 
-  transition: background-color 0.25s;
+  transition: background-color 0.3s;
   letter-spacing: 0.1em;
   // в хедер-контенте добавляем экешнсы дисплей флекc
   // &__actions{
@@ -31,18 +29,31 @@
   // font-size: 18px;
   // letter-spacing: 2px;
 
-  font-size: 1.125rem;
-
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $color-accent;
   }
 
   &--light {
-    min-width: 250px;
-    min-height: 60px;
-
     border-color: $color-white;
     background-color: rgba($color-white, 0.1);
+
+    @include lg-min {
+      min-width: 250px;
+      min-height: 60px;
+
+      font-size: 1.125rem;
+    }
+
+    @include lg-md {
+      min-width: 200px;
+      min-height: 50px;
+    }
+
+    @include md {
+      min-width: 170px;
+      min-height: 40px;
+    }
   }
 
   &--primary {
