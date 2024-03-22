@@ -10,6 +10,7 @@ $local-gap: math.div(40px, 3);
     display: grid;
 
     margin-bottom: $gap;
+
     //  вычисляем относительную высоту для ареас
     // grid-template-rows: repeat(3, 33.3333vh);
     // высота блоков данной секции для декстопов =1экран с учетом одинаковых паддинг по вертикали
@@ -22,19 +23,48 @@ $local-gap: math.div(40px, 3);
     // неважно сколько строк, принимай указанный размер автоматически (это касается обычной высоты)
     // grid-auto-rows: calc(33.3333vh - #{$local-gap});
     // но для динамики перенесем в медиазапросы, они пишутся в конце файла style.scss
-
-    gap: $gap-sm;
-    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
-    grid-template-columns: repeat(4, 1fr);
     //
     // блоки должны иметь минимальный фиксированный размер в px, менее которого их высота не должна подстраиваться под высоту окна
     // иначе они будут сжиматься в полосу при изменении высоты экрана
+    @include lg-min {
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md-sm {
+      grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm-min {
+      gap: $gap-sm;
+    }
+
+    @include sm {
+      gap: $gap;
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+    }
+
+    @media (min-height: 691px) {
+      grid-auto-rows: calc(33.33333vh - $local-gap);
+    }
+
+    @media (max-height: 690px) {
+      grid-auto-rows: calc(230px - $local-gap);
+    }
   }
 
   &__actions {
     display: flex;
     justify-content: center;
 
-    margin-bottom: $gap-lg;
+    @include sm-min {
+      margin-bottom: $gap-lg;
+    }
   }
 }
