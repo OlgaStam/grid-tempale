@@ -8,15 +8,14 @@
   }
 
   &__list {
-
     display: grid;
     // отправляем менюшку вправо
     justify-content: end;
+
+    gap: $gap;
     // TODO: переделать на гриды и показать разницу
     // grid-template-columns: repeat(3, 100px);
     grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
-    gap: $gap;
-
     // list-style: none;
     // margin: 0;
     // padding: 0;
@@ -28,18 +27,20 @@
 
   &__link {
     display: block;
+
     padding: $gap $gap-sm;
+
+    transition: color 0.5s;
+    letter-spacing: 0.09em;
     // копируем из фотопия, пеерводим в ремы
     // font-size: 18px;
     // letter-spacing: 2px;
+
     font-size: 1.125rem;
-    letter-spacing: 0.09em;
-    transition: color 0.5s;
 
     &:hover,
     &:focus {
       color: $color-accent;
     }
-
   }
 }

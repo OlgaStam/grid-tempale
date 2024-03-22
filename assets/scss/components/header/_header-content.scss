@@ -15,14 +15,26 @@
   }
 
   &__title {
-    // перенесли  margin: 0 0 53px; в медиазапросы
-    text-align: center;
+    @include lg-min {
+      margin: 0 0 53px;
+    }
+    @include lg-md {
+      margin: 0 0 43px;
+    }
+    @include md {
+      margin: 0 0 33px;
+    }
   }
 
   &__actions {
     display: flex;
-    gap: $gap;
     justify-content: center;
 
+    gap: $gap;
+    gap: $gap;
+    @include sm {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }

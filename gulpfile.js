@@ -24,7 +24,7 @@ const PATH = {
   jsFolder: './assets/js/',
   jsFiles: './assets/js/**/*.js',
   imgFolder: './assets/img/'
-};
+}
 
 const PLUGINS = [
   dc({ discardComments: true }),
@@ -35,8 +35,8 @@ const PLUGINS = [
     ],
     cascade: true
   }),
-  mqpacker({sort: sortCSSmq})
-];
+  mqpacker({sort: sortCSSmq})/* отвечает за сортировку кода после сборки*/
+]
 
 function scss() {
   return src(PATH.scssRoot)

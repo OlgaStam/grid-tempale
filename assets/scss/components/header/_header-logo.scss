@@ -2,11 +2,12 @@
 @use "../../presets" as *;
 
 .header-logo {
+  letter-spacing: 0.22em;
   // копируем из фотопия, переводим в ремы и ем
   // font-size: 24px;
   // letter-spacing: 6px;
+
   font-size: 1.5rem;
-  letter-spacing: 0.22em;
 
   // line-height: 20px; не нужен, т.к. не двутсрочного текста
   // остальное наследуется
@@ -17,13 +18,16 @@
 
   &__link {
     display: block;
+
     padding: $gap $gap $gap 0;
   }
 
   &__accent {
     display: inline-block;
-    padding: 14px 1px 13px 5px;
+
     margin-right: 4px;
+    padding: 14px 1px 13px 5px;
+
     border: 3px solid $color-highlight;
   }
 }

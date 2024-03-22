@@ -5,7 +5,6 @@
   // свойства копируем из фотопиа,
   // но именно этот опасити относится не кнопке, а к ее фону
   // opacity: 0.1;
-
   // ширина высота просто так не работают, пока это строчный элемент
   // добавляем блок
   display: flex;
@@ -14,42 +13,44 @@
 
   min-width: 250px;
   min-height: 60px;
+  // чтобы контент кнопок никогда не прижался к бордюру ставим паддинги
+  padding: 0.5em 1em;
 
+  transition: background-color 0.25s;
+  letter-spacing: 0.1em;
   // в хедер-контенте добавляем экешнсы дисплей флекc
   // &__actions{
   //   display: flex;
   // }
   // переносим опассити в цвет, переехал в лайте
   // background-color: rgba($color-white, 0.1);
+
   border-width: 2px;
   border-style: solid;
-  // чтобы контент кнопок никогда не прижался к бордюру ставим паддинги
-  padding: 0.5em 1em;
-
   // копируем из фотопия, пеерводим в ремы
   // font-size: 18px;
   // letter-spacing: 2px;
-  font-size: 1.125rem;
-  letter-spacing: 0.1em;
 
-  transition: background-color 0.25s;
+  font-size: 1.125rem;
 
   &:hover {
     background-color: $color-accent;
   }
 
   &--light {
-    background-color: rgba($color-white, 0.1);
-    border-color: $color-white;
     min-width: 250px;
     min-height: 60px;
+
+    border-color: $color-white;
+    background-color: rgba($color-white, 0.1);
   }
 
   &--primary {
-    background-color: rgba($color-primary, 0.8);
-    border-color: $color-primary;
     min-width: 350px;
     min-height: 60px;
+
+    border-color: $color-primary;
+    background-color: rgba($color-primary, 0.8);
     // font-size: 1.125rem;
   }
 }
